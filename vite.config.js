@@ -13,6 +13,7 @@ export default defineConfig({
       theme_color: "#7c5cff",
       icons: [
         {
+          purpose: 'any maskable',
           src: "/pwa-icon.png",
           type: "image/png"
         }

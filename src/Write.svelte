@@ -137,6 +137,6 @@
     margin-top: 10px;
     padding: 0.5rem;
     border-radius: 10px;
-    height: calc(100vh - 200px);
+    height: calc( 100vh - 200px );
   }
 </style>
