@@ -2,6 +2,8 @@
 import CryptoJS from "crypto-js";
 import LZString from "lz-string";
 
+const server_host = "https://secretpostapi.hieronymus.uk/"
+
 export const sendEncrypted = async() => {
     let key
     let passwd
@@ -41,7 +43,7 @@ export const sendEncrypted = async() => {
     }
 
 
-    let data = (await(await fetch("http://localhost:3000/post", {
+    let data = (await(await fetch(server_host + "post", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -79,7 +81,7 @@ export const decrypto = (result, payload, passwd) => {
 
 export const fetchResult = async (payload) => {
     const b = JSON.parse(LZString.decompressFromBase64(payload))
-    return (await (await fetch("http://localhost:3000/get", {
+    return (await (await fetch(server_host + "get", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
