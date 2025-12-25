@@ -133,7 +133,7 @@
   }
   .text-area {
     background-color: white;
-    width: calc(100% - 10px);
+    width: calc(100% - 15px);
     margin-top: 10px;
     padding: 0.5rem;
     border-radius: 10px;
