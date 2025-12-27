@@ -6,6 +6,17 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [svelte(), VitePWA({
     registerType: 'autoUpdate',
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/secretpost\.hieronymus\.uk/,
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'app-cache'
+          }
+        }
+      ]
+    },
     manifest: {
       name: "Secret Post",
       short_name: "Secret Post",

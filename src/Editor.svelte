@@ -188,6 +188,10 @@
     cursor: pointer;
   }
 
+  .toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .toolbar img.active {
     background: #007bff;
     color: white;

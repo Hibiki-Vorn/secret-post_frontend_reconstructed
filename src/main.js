@@ -1,9 +1,16 @@
 // @ts-nocheck
 import { mount } from 'svelte'
-import App from './App.svelte'
+import Write from "./Write.svelte";
+import OpenPost from "./OpenPost.svelte";
 import "./app.css";
 
-window.chrome = {};
+let App
+
+if (window.location.pathname === "/") {
+  App = Write;
+} else {
+  App = OpenPost;
+}
 
 
 const app = mount(App, {
